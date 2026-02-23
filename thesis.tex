@@ -1,0 +1,308 @@
+% !TEX program = xelatex
+% 开源模板：请使用 XeLaTeX 编译
+
+\documentclass[UTF8,AutoFakeBold=1,AutoFakeSlant,zihao=-4]{SCAU}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{setspace}
+\usepackage{ctex}
+\usepackage{color}
+\usepackage{placeins}
+
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+% 公式编号格式：全文连续编号，显示为（式1）（式2）...
+\makeatletter
+\renewcommand{\tagform@}[1]{\maketag@@@{（式#1）}}
+\makeatother
+
+% 浮动体布局参数：优先贴近文段，减少独立浮动页
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.8}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{5}
+\setlength{\intextsep}{\baselineskip}
+\setlength{\textfloatsep}{\baselineskip}
+\setlength{\floatsep}{\baselineskip}
+
+% 参考文献原文引用样式辅助命令
+\newcommand{\enrefzh}[1]{\textit{#1}}
+\newcommand{\cnrefquote}[1]{“#1”}
+
+% 可选代码语言示例（JavaScript）
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof,new,true,false,catch,function,return,null,switch,var,if,in,while,do,else,case,break,const},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class,export,boolean,throw,implements,import,this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+% ===== 封面信息（占位）=====
+\newcommand{\thesisTitle}{论文题目}
+\newcommand{\yourDept}{学院}
+\newcommand{\yourMajor}{统计学}
+\newcommand{\yourName}{HAI}
+\newcommand{\yourMentor}{HAI}
+\newcommand{\yourjob}{职称}
+\newcommand{\studentID}{202212345678}
+\newcommand{\Date}{\zhtoday}
+
+% 英文信息（占位）
+\renewcommand{\yourDeptEN}{Your College}
+\renewcommand{\yourSchoolEN}{South China Agricultural University}
+\renewcommand{\yourCityEN}{Guangzhou}
+\renewcommand{\yourPostCodeEN}{510642}
+\renewcommand{\yourCountryEN}{China}
+
+\begin{document}
+
+% 封面
+\coverpage
+
+% 原创性声明页
+\begin{authorization}
+  % 本页由模板自动生成，可保持为空
+\end{authorization}
+
+% 中文摘要
+\begin{abstract}
+  此处填写中文摘要内容。建议用两到三段概述研究背景、研究方法、主要发现与应用价值，避免堆砌细节。
+
+  此模板用于展示论文排版结构与常见学术组件。示例中包含图表、公式、交叉引用、代码、脚注与附录，便于直接替换为你的正式内容。
+  \keywords{关键词一；关键词二；关键词三；关键词四}
+\end{abstract}
+
+% 英文摘要
+\begin{abstractEN}
+  {Fill in Your Thesis Title Here}
+  {Your Name Here}
+  {Fill in your English abstract here. It is recommended to briefly present research background, methods, results, and contributions in two or three paragraphs.}
+  \keywordsEN{Keyword 1; Keyword 2; Keyword 3; Keyword 4}
+\end{abstractEN}
+
+% 目录
+\contentpage
+
+% ==================== 正文 ====================
+\section{绪论}
+
+\subsection{研究背景}
+
+\subsubsection{行业发展现状}
+此处填写行业发展现状内容，建议先说明市场规模与结构特征，再引出研究对象与研究价值。示例脚注可用于补充说明\footnote{此处为脚注示例，可用于解释术语、数据口径或补充来源。}。
+
+\paragraph{四级标题示例一}
+此处展示四级标题格式。若正文层级较深，建议仅在必要处使用四级标题，保持目录与阅读体验清晰。
+
+\paragraph{四级标题示例二}
+此处可补充研究场景、业务问题或理论问题的具体描述。
+
+\subsubsection{研究问题提出}
+根据 \citeauthor{smith2022deep}（\citeyear{smith2022deep}）和 \cite{chen2023neural}，复杂任务通常需要同时关注结果质量与可解释性。本模板建议将“问题定义、方法路线、验证逻辑”在绪论中明确写出。
+
+\subsection{研究意义}
+
+\subsubsection{理论意义}
+可从以下角度组织理论意义：
+\begin{enumerate}
+  \item 此处填写理论补充点一，例如研究对象的细分化价值。
+  \item 此处填写理论补充点二，例如方法框架的迁移意义。
+  \item 此处填写理论补充点三，例如跨场景比较的外部有效性讨论。
+\end{enumerate}
+
+\subsubsection{实践意义}
+可从以下角度组织实践意义：
+\begin{itemize}
+  \item 对业务决策者：此处填写可执行建议与应用边界。
+  \item 对管理者：此处填写策略优化与流程改进要点。
+  \item 对后续研究者：此处填写可复现与可扩展方向。
+\end{itemize}
+
+\subsection{国内外研究现状}
+
+\subsubsection{国外研究综述}
+此处填写国外文献综述，建议按“早期研究路径、近期方法演进、现有争议点”三段展开。可参考 \cite{wilson2021machine} 的方法体系组织综述逻辑。
+
+\subsubsection{国内研究综述}
+此处填写国内文献综述。可结合 \citeauthor{zhang2023example}（\citeyear{zhang2023example}）讨论本土数据特征、研究范式与常见局限。
+
+\subsubsection{研究评述}
+在文献评述中建议明确三点：已有研究解决了什么、尚未解决什么、本文将如何补足。
+
+\subsection{研究内容与方法}
+
+\subsubsection{研究内容}
+此处可按“研究目标、研究问题、预期贡献”描述研究内容，并在章节末给出对应关系。
+
+\subsubsection{技术路线（含图片示例）}
+图\ref{fig:tech_route_template} 演示了模板中的图片插入方式与交叉引用方式，实际使用时可直接替换图片文件。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.70\textwidth]{Fig/latex.jpg}
+  \caption{技术路线示意图（占位）}
+  \label{fig:tech_route_template}
+\end{figure}
+
+\section{研究设计与方法}
+
+\subsection{数据来源与描述（含表格示例）}
+表\ref{tab:data_summary} 为简单三线表示例，可用于展示样本规模、时间范围与字段数量。
+
+\begin{table}[htbp]
+  \centering
+  \caption{数据来源与样本描述（示例）}
+  \label{tab:data_summary}
+  \begin{tabular}{lccc}
+    \toprule
+    数据集 & 样本量 & 时间范围 & 字段数 \\
+    \midrule
+    数据集A（训练） & XX,XXX & 20XX--20XX & XX \\
+    数据集B（验证） & X,XXX  & 20XX--20XX & XX \\
+    数据集C（对照） & X,XXX  & 20XX--20XX & XX \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{变量定义（含多行表格）}
+表\ref{tab:variable_definition} 演示了 \texttt{multirow} 的用法。
+
+\begin{table}[htbp]
+  \centering
+  \caption{变量定义与说明（示例）}
+  \label{tab:variable_definition}
+  \begin{tabular}{llll}
+    \toprule
+    \multirow{2}{*}{变量类型} & \multirow{2}{*}{变量名} & \multicolumn{2}{c}{说明} \\
+    \cmidrule(lr){3-4}
+     &  & 含义 & 取值示例 \\
+    \midrule
+    \multirow{2}{*}{被解释变量} & $Y$ & 目标变量 & XX.XX \\
+     & $Y^{*}$ & 标准化目标变量 & 0--1 \\
+    \multirow{3}{*}{解释变量} & $X_1$ & 连续型特征 & XX.XX \\
+     & $X_2$ & 分类型特征 & A/B/C \\
+     & $X_3$ & 交互项特征 & $X_1 \times X_2$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{方法说明（含公式示例）}
+本节示例包括行内公式与独立公式。行内公式示例：$y=\beta_0+\beta_1 x+\epsilon$。
+
+\begin{equation}
+  \hat{y}_i = \beta_0 + \sum_{j=1}^{p}\beta_j x_{ij}
+  \label{eq:linear_model}
+\end{equation}
+
+\begin{equation}
+  \mathrm{MSE} = \frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2
+  \label{eq:mse}
+\end{equation}
+
+\begin{equation}
+  \mathrm{MAPE} = \frac{100\%}{n}\sum_{i=1}^{n}\left|\frac{y_i-\hat{y}_i}{y_i}\right|
+  \label{eq:mape}
+\end{equation}
+
+由式\ref{eq:linear_model}--式\ref{eq:mape}可见，方法设定、误差度量与评价指标三者构成完整的方法链条。
+
+\section{模板展示与写作指引}
+
+\subsection{内容展示示例（含图片引用）}
+本节用于演示正文如何引用图片与表格。可结合图\ref{fig:tech_route_template} 和表\ref{tab:data_summary} 说明你的材料来源与组织方式。
+
+\subsection{结果呈现示例（含表格、交叉引用）}
+表\ref{tab:scheme_metrics} 用于演示对比型结果表的写法，包含“表格单元格内引用文献”的示例，正文可说明不同方案之间的差异与适用条件。
+
+\begin{table}[htbp]
+  \centering
+  \caption{方案对比结果与文献依据（示例）}
+  \label{tab:scheme_metrics}
+  \begin{tabular}{p{2.2cm}ccc p{4.2cm}}
+    \toprule
+    方案 & 指标A & 指标B & 指标C & 文献依据 \\
+    \midrule
+    方案A（基线） & XX.XX & XX.XX & XX.XX & 深度学习任务的基线设定可参考 \cite{smith2022deep}。 \\
+    方案B（增强） & XX.XX & XX.XX & XX.XX & 机器学习流程与评估框架可参考 \cite{wilson2021machine}。 \\
+    方案C（优化） & XX.XX & XX.XX & XX.XX & 参数优化与大规模训练策略可参考 \cite{chen2023neural}。 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{写作说明与边界}
+本节可写三类内容：第一，关键发现对应了哪些研究问题；第二，现有证据支持到什么程度；第三，结论适用范围与后续可补充的数据或方法。
+
+% ==================== 参考文献 ====================
+\begin{references}
+  \bibliography{references}
+\end{references}
+
+% ==================== 附录 ====================
+\appendix
+\setcounter{tocdepth}{1}
+\hypersetup{bookmarksdepth=1}
+
+% 目录与PDF导航仅显示“附录 A”一级
+\refstepcounter{section}
+\phantomsection
+\addcontentsline{toc}{section}{\numberline{\thesection}}
+\pdfbookmark[1]{\thesection}{appendixA}
+\section*{\thesection}
+
+\subsection*{代码清单示例}
+\begin{lstlisting}[language=Python,caption={Python代码清单示例},label={lst:appendix_code}]
+def train_model(data):
+    """此处填写训练逻辑。"""
+    model = {"name": "demo_model", "score": 0.0}
+    return model
+
+if __name__ == "__main__":
+    sample_data = [1, 2, 3]
+    result = train_model(sample_data)
+    print(result)
+\end{lstlisting}
+
+\subsection*{附录表格示例}
+\begin{table}[htbp]
+  \centering
+  \caption{附录参数设置示例}
+  \label{tab:appendix_params}
+  \begin{tabular}{lll}
+    \toprule
+    参数名 & 取值 & 说明 \\
+    \midrule
+    参数A & XX & 此处填写参数含义 \\
+    参数B & XX & 此处填写参数含义 \\
+    参数C & XX & 此处填写参数含义 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+附录中的代码见清单\ref{lst:appendix_code}，附录中的参数说明见表\ref{tab:appendix_params}。
+
+% ==================== 致谢 ====================
+\begin{acknowledgement}
+  首先感谢我自己，其次是overleaf上开源之前版本的残橘子学长，感谢claude code、codex、antigravity，这些coding-agent真的帮我解决了很多板式调优的问题（不然我可能还在调板式。。。）\\
+  有任何问题和建议可以直接私信我：\textit{JohntanX}、发邮件到\textit{1391861399@qq.com}、直接issue或者pull request。\\
+  希望能够帮助到更多深受论文折磨的同学。
+\end{acknowledgement}
+
+\end{document}
