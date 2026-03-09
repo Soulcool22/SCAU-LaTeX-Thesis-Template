@@ -186,7 +186,7 @@
     \vspace{1cm}
 
     \noindent
-    作者签名： \hspace{6.8cm}  指导教师签名：\\
+    作者签名： \hspace{6.3cm}  指导教师签名：\\
     日期： \underline{\hspace{2cm}} 年 \underline{\hspace{1cm}} 月 \underline{\hspace{1cm}} 日 \hfill 日期： \underline{\hspace{2cm}} 年 \underline{\hspace{1cm}} 月 \underline{\hspace{1cm}} 日
 }{}
 
