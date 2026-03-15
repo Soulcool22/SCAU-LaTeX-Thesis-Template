@@ -55,7 +55,7 @@
 %%%%%%%%%%%%%%%%%%%%%% 引用格式 %%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage{gbt7714}    %用于生成符合中国国家标准 GB/T 7714-2015 的参考文献样式。
-\bibliographystyle{gbt7714-author-year}   %作者年份制（不编序号）
+\bibliographystyle{gbt7714-author-year-local}   %仅调整文末年份位置，保持其余版式一致
 \setlength{\bibsep}{0.0pt}              %文献条目之间的垂直间距为 0
 \def\bibfont{\zihao{-4}}                % 参考文献字号：小四号
 \setlength{\bibhang}{2\ccwd}            % 悬挂缩进2字距
