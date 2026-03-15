@@ -35,13 +35,24 @@ cd SCAU-LaTeX-Thesis-Template
 
 ### 2. 编译论文
 
-使用 `latexmk` 可以自动处理交叉引用和参考文献，最为推荐：
+参考文献使用 `BibTeX`，因此不要只跑单次 `XeLaTeX`，否则正文引用和文末参考文献都不会显示。
+
+推荐直接使用 `latexmk`，它会自动执行 `XeLaTeX -> BibTeX -> XeLaTeX -> XeLaTeX`：
 
 ```bash
-latexmk -xelatex thesis.tex
+latexmk thesis.tex
 ```
 
-*或者在 IDE 中将编译器设置为 `XeLaTeX`。*
+如果你在 IDE 中手动配置编译链，请使用以下顺序：
+
+```bash
+xelatex thesis.tex
+bibtex thesis
+xelatex thesis.tex
+xelatex thesis.tex
+```
+
+VS Code 的 LaTeX Workshop、TeXstudio 等编辑器中，也应选择 `latexmk` 或包含 `bibtex` 的 recipe，而不是只选 `xelatex`。
 
 ---
 
