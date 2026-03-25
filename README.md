@@ -91,6 +91,14 @@ VS Code 的 LaTeX Workshop、TeXstudio 等编辑器中，也应选择 `latexmk` 
 
 ---
 
+## 开源协议 (License)
+
+本项目采用 `LPPL 1.3c`（LaTeX Project Public License）开源发布，详见仓库根目录的 [LICENSE](LICENSE) 文件。
+
+如果你基于本模板进行修改、再发布或长期维护，建议保留原始署名，并按 LPPL 的要求对修改内容进行清晰说明。
+
+---
+
 ## 鸣谢 (Acknowledgements)
 
 * **原有贡献者**：感谢 `残橘子` 学长在 Overleaf 上发布的版本。
