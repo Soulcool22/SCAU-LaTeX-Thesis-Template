@@ -123,9 +123,12 @@
 }
 
 
-% 设置插图与正文之间的间距
-\setlength{\intextsep}{\baselineskip} % 插图与正文之间上下各空一行
-\setlength{\textfloatsep}{\baselineskip}
+% 设置图表与正文之间的间距：在正文行距生效后取值，确保上下各空一行
+\AtBeginDocument{%
+  \setlength{\intextsep}{\baselineskip}%
+  \setlength{\textfloatsep}{\baselineskip}%
+  \setlength{\floatsep}{\baselineskip}%
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%% code style %%%%%%%%%%%%%%%%%%%%%%
