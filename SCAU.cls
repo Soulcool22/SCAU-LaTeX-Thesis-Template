@@ -382,8 +382,12 @@
 % `#2` 必选参数，控制下划线的粗细
 % `#3` 必选参数，需要添加下划线的文本
 
+\newcommand{\coverlabel}[1]{{\bfseries #1}}
+\newcommand{\covervalue}[1]{{\songti\rmfamily\mdseries\zihao{-3} #1}}
+\newcommand{\coverfixed}[1]{{\songti\bfseries\zihao{-3} #1}}
+
 \newcommand{\infobox}[2]{
-    \hspace{2.4cm}\heiti\zihao{-2}\textbf{\selectfont{#1~\dunderline{0.5pt}{\makebox[8cm][c]{#2}}}}
+    \hspace{2.4cm}\heiti\zihao{-2}\selectfont{\coverlabel{#1}~\dunderline{0.5pt}{\makebox[8cm][c]{\covervalue{#2}}}}
 }
 % 定义一个名为 `infobox` 的命令，用于生成带下划线的信息框
 % 参数：
@@ -391,17 +395,17 @@
 % `#2` 信息框的内容
 % 格式：
 % `\hspace{2.4cm}` 左侧缩进 2.4cm
-% `\heiti\zihao{-2}\textbf` 设置字体为黑体小二加粗
-% `\dunderline{1pt}{\makebox[8cm][c]{#2}}` 在内容下方添加 1pt 的下划线，并将内容居中放在 8cm 的盒子中
+% 标签使用加粗，填写内容使用常规字重
+% `\dunderline{0.5pt}{\makebox[8cm][c]{#2}}` 在内容下方添加 0.5pt 的下划线，并将内容居中放在 8cm 的盒子中
 
 \newcommand{\trbox}[2]{
-\hspace{2.4cm}\heiti\zihao{-2}\textbf{\selectfont{#1~\dunderline{0.5pt}{\makebox[3.2cm][c]{#2}}}}
+\hspace{2.4cm}\heiti\zihao{-2}\selectfont{\coverlabel{#1}~\dunderline{0.5pt}{\makebox[3.2cm][c]{\covervalue{#2}}}}
 }
 \newcommand{\jobbox}[2]{
-\hspace{2.4cm}\heiti\zihao{-2}\textbf{\selectfont{#1~\dunderline{0.5pt}{\makebox[3.0cm][c]{#2}}}}
+\hspace{2.4cm}\heiti\zihao{-2}\selectfont{\coverlabel{#1}~\dunderline{0.5pt}{\makebox[3.0cm][c]{\covervalue{#2}}}}
 }
 \newcommand{\datebox}[2]{
-\hspace{2.4cm}\heiti\zihao{-2}\textbf{\selectfont{#1~\makebox[8cm][l]{#2}}}
+\hspace{2.4cm}\heiti\zihao{-2}\selectfont{\coverlabel{#1}~\makebox[8cm][l]{#2}}
 }
 
 \newcommand{\coverpage}{
@@ -450,7 +454,7 @@
         % 生成“职称”信息框，内容为 `\yourjob`
         % 生成“指导教师”信息框，内容为 `\yourMentor`
 
-   \datebox{ \zihao{-3}\songti{提交日期:}}{\dunderline{0.5pt}{\makebox[2.2cm][c]{\number\year}}年\dunderline{0.5pt}{\makebox[1.4cm][c]{\number\month}}月\dunderline{0.5pt}{\makebox[2.0cm][c]{\number\day}}日}
+   \datebox{ \zihao{-3}\songti{提交日期:}}{\dunderline{0.5pt}{\makebox[2.2cm][c]{\covervalue{\number\year}}}\coverfixed{年}\dunderline{0.5pt}{\makebox[1.4cm][c]{\covervalue{\number\month}}}\coverfixed{月}\dunderline{0.5pt}{\makebox[2.0cm][c]{\covervalue{\number\day}}}\coverfixed{日}}
         % 生成“提交日期”信息框（仅保留年/月/日分段下划线，避免双线）
     \end{spacing}
   
