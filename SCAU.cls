@@ -302,15 +302,15 @@
 }
 
 \titlecontents{section}[0pt]{\songti \zihao{-4}\linespread{1.5}\selectfont}
-{\thecontentslabel\hspace{0.5em}}{}%
+{\thecontentslabel\hspace{1em}}{}%
 {\titlerule*[0.7em]{.}\contentspage}
 
 \titlecontents{subsection}[0pt]{\songti \zihao{-4}\linespread{1.5}\selectfont}
-{\thecontentslabel\hspace{0.5em}}{}%
+{\thecontentslabel\hspace{1em}}{}%
 {\titlerule*[0.7em]{.}\contentspage}
 
 \titlecontents{subsubsection}[0pt]{\songti \zihao{-4}\linespread{1.5}\selectfont}
-{\thecontentslabel\hspace{0.5em}}{}%
+{\thecontentslabel\hspace{1em}}{}%
 {\titlerule*[0.7em]{.}\contentspage}
 
 % 四级标题目录格式（不在目录中显示）
