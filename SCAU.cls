@@ -176,7 +176,7 @@
     \vspace{1cm}
     \noindent
 
-    作者签名： \hfill 日期： \underline{\hspace{2cm}} 年 \underline{\hspace{1cm}} 月 \underline{\hspace{1cm}} 日 \hfill
+    作者签名： \hfill 日期： \hspace{2cm} 年 \hspace{1cm} 月 \hspace{1cm} 日 \hfill
 
     \vspace{5cm}
 
@@ -190,8 +190,8 @@
     \vspace{1cm}
 
     \noindent
-    作者签名： \hspace{6.3cm}  指导教师签名：\\
-    日期： \underline{\hspace{2cm}} 年 \underline{\hspace{1cm}} 月 \underline{\hspace{1cm}} 日 \hfill 日期： \underline{\hspace{2cm}} 年 \underline{\hspace{1cm}} 月 \underline{\hspace{1cm}} 日
+    \hspace*{0.8cm}作者签名： \hspace{5.5cm}  指导教师签名：\\
+    \hspace*{0.8cm}日期： \hspace{2cm} 年 \hspace{1cm} 月 \hspace{1cm} 日 \hfill 日期： \hspace{2cm} 年 \hspace{1cm} 月 \hspace{1cm} 日
 }{}
 
 
